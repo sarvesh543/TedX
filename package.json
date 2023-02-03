@@ -1,0 +1,12 @@
+{
+  "name": "tedx-iit-mandi",
+  "version": "1.0.0",
+  "description": "TedX Website for IIT Mandi",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Rajat Verma",
+  "license": "ISC"
+}
