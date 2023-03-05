@@ -1,0 +1,15 @@
+.footer-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  height: var(--footer-height);
+  color: #fff;
+  z-index: 100;
+  /* padding: 0 10px; */
+  box-shadow: rgb(0 0 0 / 10%) 4px 0px 0px 4px;
+}

@@ -1,0 +1,102 @@
+.container {
+  position: fixed;
+  /* background-color: rgba(128, 128, 128, 0.5); */
+    backdrop-filter: blur(15px);
+
+  width: 100%;
+  top: 0rem;
+  left: 0rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 110;
+  transform: translateY(-100%);
+}
+.modalVisible {
+  transform: translateY(0%);
+}
+
+.modal {
+  position: relative;
+  background-color: transparent;
+  border-radius: 10px;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+  max-height: 80%;
+  width: fit-content;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal > *:not(:last-child) {
+  opacity: 0;
+}
+.imgCont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.imgCont h2 {
+  margin: 0;
+  margin-left: 5px;
+}
+.image {
+  cursor: pointer;
+  transition: transform 0.25s;
+}
+.image:hover {
+  transform: rotate(90deg) scale(1.2);
+}
+.modalSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 3px;
+  z-index: -50;
+}
+.modalSvg rect {
+  stroke: #fff;
+  stroke-width: 4px;
+  stroke-dasharray: calc(4 * 100%);
+  stroke-dashoffset: calc(4 * 100%);
+}
+/* add animation for modal appearing */
+.modalVisible .modalSvg rect {
+  animation: sketchIn 0.5s 0.3s linear forwards;
+}
+.modalVisible .modal {
+  animation: modalFadeIn 0.25s 0.8s ease-in forwards;
+}
+.modalVisible .modal > *:not(:last-child) {
+  animation: fadeIn 0.25s 0.8s ease-in forwards;
+}
+
+@keyframes sketchIn {
+  0% {
+    stroke-dashoffset: calc(4 * 100%);
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes modalFadeIn {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: var(--secondary);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

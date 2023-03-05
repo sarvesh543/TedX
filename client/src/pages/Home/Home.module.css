@@ -1,0 +1,11 @@
+.home-logo {
+  height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+.home-logo svg {
+  max-width: 60%;
+}
+
