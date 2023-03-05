@@ -1,0 +1,6 @@
+#root {
+  --footer-height: 60px;
+}
+.layout {
+  margin-bottom: calc(var(--footer-height) + 10px);
+}

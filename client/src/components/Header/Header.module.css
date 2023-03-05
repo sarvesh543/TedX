@@ -1,0 +1,100 @@
+.nav-container {
+  position: sticky;
+  background-color: #1b1b1b;
+  top: 0;
+  z-index: 100;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  box-shadow: rgb(255 255 255 / 10%) 0px 2px 4px 0px;
+  z-index: 101;
+}
+.nav-logo {
+  height: 60%;
+  width: fit-content;
+  /* transform: translateX(-30%); */
+}
+.nav-logo svg{
+  height: 100%;
+  width: fit-content;
+}
+.nav-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-item {
+  text-decoration: none;
+  color: #fff;
+  margin: 10px;
+  font-size: large;
+  padding: 5px;
+}
+/* underline nav-item on hover */
+.nav-item:hover, .nav-item-active {
+  border-bottom: 3px solid var(--primary-color);
+}
+.sidebarToggle {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  /* navbar converted to sidebar */
+  .nav-items {
+    overflow-y: auto;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    height: calc(100% - 60px);
+    width: 80%;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 100;
+    background-color: rgb(62, 62, 62);
+    transform: translateX(100%);
+    transition: transform ease-in-out 0.3s;
+    /* padding: 10px 0; */
+  }
+  .nav-item {
+    width: 80%;
+    text-align: center;
+  }
+  .nav-item:hover {
+    border-top: 3px solid var(--primary-color);
+  }
+  .nav-items-visible {
+    transform: translateX(0);
+  }
+  /* sidebar icon */
+  .sidebarToggle {
+    display: unset;
+    width: 50px;
+    z-index: 2;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  .sidebarIcon line {
+    transition: transform 0.25s ease-in-out;
+  }
+  .sidebarIcon > line:nth-child(1) {
+    transform-origin: 50% 24%;
+  }
+  .sidebarIconChange > line:nth-child(1) {
+    transform: translateY(26%) rotate(45deg);
+  }
+  .sidebarIcon > line:nth-child(2) {
+    transform-origin: 10% 50%;
+  }
+  .sidebarIconChange > line:nth-child(2) {
+    transform: scaleX(0);
+  }
+  .sidebarIcon > line:nth-child(3) {
+    transform-origin: 50% 76%;
+  }
+  .sidebarIconChange > line:nth-child(3) {
+    transform: translateY(-26%) rotate(-45deg);
+  }
+}

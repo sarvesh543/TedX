@@ -1,0 +1,26 @@
+.about-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 15px;
+}
+.about-heading{
+  /* display: inline-block; */
+  width:fit-content;
+  color: var(--primary-color);
+  border-bottom: 4px solid #fff;
+}
+.apply-btn{
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 1.2rem;
+    transition: transform ease-in-out 0.2s;
+    cursor: pointer;
+}
+.apply-btn:hover{
+    transform: translateY(-2px) scale(1.02);
+}
